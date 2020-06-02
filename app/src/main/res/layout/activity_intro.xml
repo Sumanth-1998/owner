@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/intro"
+    tools:context=".intro">
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="280dp"
+        android:layout_height="41dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="48dp"
+        android:background="#7986CB"
+        android:gravity="center"
+        android:text="Get  started"
+        android:textColor="#ffffff"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="229dp"
+        android:layout_height="129dp"
+
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/rpk"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView64"
+        android:layout_width="360dp"
+        android:layout_height="87dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="492dp"
+        android:text="Help ParkInnCharge to provide parking and\n charging facility to people in need by\n renting your parking space."
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView63"
+        android:layout_width="270dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="192dp"
+        android:text="ParkInnChargeService"
+        android:textColor="#000000"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/intro_lottie_animation_view"
+        android:layout_width="279dp"
+        android:layout_height="225dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="260dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/car" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
