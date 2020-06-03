@@ -73,24 +73,5 @@ public class MainActivity extends AppCompatActivity implements DrawerLocker {
         }
     }
 
-   public void  onBackPressed(){
-        final AlertDialog.Builder builder = new AlertDialog.Builder( MainActivity.this );
-        builder.setMessage("Are you sure you want to exit from app?");
-       builder.setCancelable(true);
-       builder.setNegativeButton( "Cancel", new DialogInterface.OnClickListener() {
-           @Override
-           public void onClick(DialogInterface dialogInterface, int which) {
-               dialogInterface.cancel();
 
-           }
-       } );
-       builder.setPositiveButton( "Exit", new DialogInterface.OnClickListener() {
-           @Override
-           public void onClick(DialogInterface dialog, int which) {
-               finish();
-           }
-       } );
-       AlertDialog alertDialog = builder.create();
-       alertDialog.show();
-   }
 }

@@ -1654,6 +1654,7 @@ id SHIFT
 id SYM
 id TOP_END
 id TOP_START
+id about
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
 id accessibility_custom_action_1
@@ -1860,7 +1861,9 @@ id five
 id fixed
 id forever
 id four
+id fragment_bankdetails
 id fragment_container_view_tag
+id fragment_upidetails
 id genderRadioGroup
 id ghost_view
 id ghost_view_holder
@@ -1973,12 +1976,14 @@ id one
 id outline
 id oval
 id packed
+id panel_import
 id parallax
 id parent
 id parentPanel
 id parent_matrix
 id password_toggle
 id pay
+id payment
 id peekHeight
 id percent
 id phoneEditText
@@ -1995,6 +2000,7 @@ id progressBar
 id progress_circular
 id progress_horizontal
 id pulse
+id qr
 id radio
 id radioButton
 id radioButton2
@@ -2032,6 +2038,7 @@ id search_src_text
 id search_voice_btn
 id select_dialog_listview
 id selected
+id service
 id shortcut
 id showCustom
 id showHome
@@ -2053,10 +2060,12 @@ id src_in
 id src_over
 id standard
 id start
+id status
 id status_bar_latest_event_content
 id stretch
 id submenuarrow
 id submit_area
+id support
 id switch1
 id t5
 id tabMode
@@ -2257,6 +2266,7 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id viewStub
 id view_offset_helper
 id visible
 id visible_removing_fragment_view_tag
@@ -2332,6 +2342,7 @@ layout activity_intromain
 layout activity_login
 layout activity_main
 layout activity_progress
+layout blank_fragment
 layout crop_image_activity
 layout crop_image_view
 layout custom_dialog

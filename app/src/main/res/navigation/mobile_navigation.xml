@@ -29,9 +29,46 @@
         android:name="com.example.owner.ui.account.AccountFragment"
         android:label="@string/title_account"
         tools:layout="@layout/fragment_account" />
-
-
-
+    <fragment
+        android:id="@+id/service"
+        android:name="com.example.owner.service"
+        android:label="fragment_service"
+        tools:layout="@layout/fragment_service" />
+    <fragment
+        android:id="@+id/payment"
+        android:name="com.example.owner.ui.payment"
+        android:label="fragment_payment"
+        tools:layout="@layout/fragment_payment" />
+    <fragment
+        android:id="@+id/qr"
+        android:name="com.example.owner.qr"
+        android:label="fragment_qr"
+        tools:layout="@layout/fragment_qr" />
+    <fragment
+        android:id="@+id/status"
+        android:name="com.example.owner.status"
+        android:label="fragment_status"
+        tools:layout="@layout/fragment_status" />
+    <fragment
+        android:id="@+id/support"
+        android:name="com.example.owner.support"
+        android:label="fragment_support"
+        tools:layout="@layout/fragment_support" />
+    <fragment
+        android:id="@+id/about"
+        android:name="com.example.owner.about"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/fragment_bankdetails"
+        android:name="com.example.owner.fragment_bankdetails"
+        android:label="fragment_bankdetails"
+        tools:layout="@layout/fragment_bankdetails" />
+    <fragment
+        android:id="@+id/fragment_upidetails"
+        android:name="com.example.owner.fragment_upidetails"
+        android:label="fragment_upidetails"
+        tools:layout="@layout/fragment_upidetails" />
 
 
 </navigation>

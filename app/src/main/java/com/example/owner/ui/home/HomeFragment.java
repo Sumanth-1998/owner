@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.owner.Logout;
@@ -26,8 +27,11 @@ import com.google.firebase.Timestamp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.ListenerRegistration;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import org.joda.time.DateTime;
@@ -43,7 +47,7 @@ public class HomeFragment extends Fragment {
     private FirebaseUser user;
     private final String TAG="HomeFragment";
     String name,userPhone,userName,book_id,startTime;
-    TextView nameTextView,phoneTextView,bookId,inTime,days,time;
+    TextView nameTextView,phoneTextView,bookId,inTime,days,time,bookings,earnings;
     Switch statusSwitch;
     String phone="";
     Owner_pojo owner_obj;
@@ -64,13 +68,30 @@ public class HomeFragment extends Fragment {
         statusSwitch=view.findViewById(R.id.switch1);
         days=view.findViewById(R.id.textView31);
         time=view.findViewById(R.id.textView33);
+        bookings=view.findViewById(R.id.textView35);
+        earnings=view.findViewById(R.id.textView37);
         db=FirebaseFirestore.getInstance();
-        db.collection("owners").document(phone).get()
+        //ListenerRegistration registration=db.collection("owners").document(phone).add
+        db.collection("owners").document(phone)
+                .addSnapshotListener(new EventListener<DocumentSnapshot>() {
+                    @Override
+                    public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
+
+
+                   /*     }
+                    }
+                })
                 .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                     @Override
-                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {*/
+                   if(e!=null){
+                       Toast.makeText(getContext(), "Error while listening", Toast.LENGTH_SHORT).show();
+                       return;
+                   }
                         owner_obj=documentSnapshot.toObject(Owner_pojo.class);
                         statusSwitch.setChecked(owner_obj.isStatus());
+                        bookings.setText(""+owner_obj.getBookings());
+                        earnings.setText(""+owner_obj.getEarnings());
                         setStats();
                         statusSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                             @Override
@@ -147,13 +168,14 @@ public class HomeFragment extends Fragment {
 
 
                     }
-                })
-                .addOnFailureListener(new OnFailureListener() {
+                });
+
+                /*.addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         Toast.makeText(getActivity(), "Failed to get owner data!", Toast.LENGTH_SHORT).show();
                     }
-                });
+                });*/
 
 
         FirebaseApp uap=FirebaseApp.getInstance("usersapp");

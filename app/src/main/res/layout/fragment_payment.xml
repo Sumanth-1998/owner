@@ -6,7 +6,13 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
+    <ViewStub
+        android:id="@+id/viewStub"
+        android:inflatedId="@+id/panel_import"
+        android:layout="@layout/blank_fragment"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom" />
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/intro_lottie_animation_view"
         android:layout_width="429dp"

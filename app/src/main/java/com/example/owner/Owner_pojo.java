@@ -7,7 +7,7 @@ public class Owner_pojo
         String Email,Idcard,Latitude,Longitude,Name,Phone;
         boolean status;
         Date date,last_online;
-        long sec_online;
+        long sec_online,earnings,bookings;
 
     public Owner_pojo(String email, String idcard, String latitude, String longitude, String name, String phone,boolean status) {
         Email = email;
@@ -17,6 +17,22 @@ public class Owner_pojo
         Name = name;
         Phone = phone;
         this.status=status;
+    }
+
+    public long getEarnings() {
+        return earnings;
+    }
+
+    public void setEarnings(long earnings) {
+        this.earnings = earnings;
+    }
+
+    public long getBookings() {
+        return bookings;
+    }
+
+    public void setBookings(long bookings) {
+        this.bookings = bookings;
     }
 
     public Date getDate() {
