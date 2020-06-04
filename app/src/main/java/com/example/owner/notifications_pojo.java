@@ -1,9 +1,22 @@
 package com.example.owner;
 
-public class notifications_pojo {
-    String marker,order_id,endTime,startDate,startTime,msg;
+import java.util.Date;
 
-    public notifications_pojo(String marker, String order_id, String endTime, String startDate, String startTime) {
+public class notifications_pojo {
+    String marker,order_id,endTime,startTime,msg,cust_name;
+    Date startDate;
+    public notifications_pojo() {
+    }
+
+    public String getCust_name() {
+        return cust_name;
+    }
+
+    public void setCust_name(String cust_name) {
+        this.cust_name = cust_name;
+    }
+
+    public notifications_pojo(String marker, String order_id, String endTime, Date startDate, String startTime) {
         this.marker = marker;
         this.order_id = order_id;
         this.endTime = endTime;
@@ -43,11 +56,11 @@ public class notifications_pojo {
         this.endTime = endTime;
     }
 
-    public String getStartDate() {
+    public Date getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(String startDate) {
+    public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }
 

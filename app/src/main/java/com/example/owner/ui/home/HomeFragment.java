@@ -1,5 +1,7 @@
 package com.example.owner.ui.home;
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -51,6 +53,7 @@ public class HomeFragment extends Fragment {
     Switch statusSwitch;
     String phone="";
     Owner_pojo owner_obj;
+    Activity activity;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
@@ -102,14 +105,14 @@ public class HomeFragment extends Fragment {
                                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                                 @Override
                                                 public void onSuccess(Void aVoid) {
-                                                    Toast.makeText(getActivity(), "Status changed successfully!", Toast.LENGTH_SHORT).show();
+                                                    Toast.makeText(activity, "Status changed successfully!", Toast.LENGTH_SHORT).show();
 
                                                 }
                                             })
                                             .addOnFailureListener(new OnFailureListener() {
                                                 @Override
                                                 public void onFailure(@NonNull Exception e) {
-                                                    Toast.makeText(getActivity(), "Failed to update status!", Toast.LENGTH_SHORT).show();
+                                                    Toast.makeText(activity, "Failed to update status!", Toast.LENGTH_SHORT).show();
                                                     statusSwitch.setChecked(!isChecked);
                                                 }
                                             });
@@ -135,14 +138,14 @@ public class HomeFragment extends Fragment {
                                                                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                                                                 @Override
                                                                                 public void onSuccess(Void aVoid) {
-                                                                                    Toast.makeText(getActivity(), "Offline Successfull!", Toast.LENGTH_SHORT).show();
+                                                                                    Toast.makeText(activity, "Offline Successfull!", Toast.LENGTH_SHORT).show();
                                                                                     setStats();
                                                                                 }
                                                                             })
                                                                             .addOnFailureListener(new OnFailureListener() {
                                                                                 @Override
                                                                                 public void onFailure(@NonNull Exception e) {
-                                                                                    Toast.makeText(getActivity(), "Failed to go offline!", Toast.LENGTH_SHORT).show();
+                                                                                    Toast.makeText(activity, "Failed to go offline!", Toast.LENGTH_SHORT).show();
                                                                                 }
                                                                             });
                                                                 }
@@ -150,7 +153,7 @@ public class HomeFragment extends Fragment {
                                                             .addOnFailureListener(new OnFailureListener() {
                                                                 @Override
                                                                 public void onFailure(@NonNull Exception e) {
-                                                                    Toast.makeText(getActivity(), "Failed to get last active time", Toast.LENGTH_SHORT).show();
+                                                                    Toast.makeText(activity, "Failed to get last active time", Toast.LENGTH_SHORT).show();
                                                                 }
                                                             });
                                                 }
@@ -158,7 +161,7 @@ public class HomeFragment extends Fragment {
                                             .addOnFailureListener(new OnFailureListener() {
                                                 @Override
                                                 public void onFailure(@NonNull Exception e) {
-                                                    Toast.makeText(getActivity(), "Failed to update status", Toast.LENGTH_SHORT).show();
+                                                    Toast.makeText(activity, "Failed to update status", Toast.LENGTH_SHORT).show();
                                                 }
                                             });
 
@@ -173,7 +176,7 @@ public class HomeFragment extends Fragment {
                 /*.addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(getActivity(), "Failed to get owner data!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(activity, "Failed to get owner data!", Toast.LENGTH_SHORT).show();
                     }
                 });*/
 
@@ -192,33 +195,36 @@ public class HomeFragment extends Fragment {
                                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                                     @Override
                                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                                        DocumentSnapshot documentSnapshot=queryDocumentSnapshots.getDocuments().get(0);
-                                        userPhone=documentSnapshot.getString("phone");
-                                        book_id=documentSnapshot.getId();
-                                        startTime=documentSnapshot.getString("startTime");
-                                        userdb.collection("profile").document(userPhone).get()
-                                                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-                                                    @Override
-                                                    public void onSuccess(DocumentSnapshot documentSnapshot) {
-                                                        userName=documentSnapshot.getString("name");
-                                                        nameTextView.setText(userName);
-                                                        phoneTextView.setText(userPhone);
-                                                        bookId.setText(book_id);
-                                                        inTime.setText(startTime);
-                                                    }
-                                                })
-                                        .addOnFailureListener(new OnFailureListener() {
-                                            @Override
-                                            public void onFailure(@NonNull Exception e) {
-                                                Toast.makeText(getActivity(), "Failed to fetch profile data", Toast.LENGTH_SHORT).show();
-                                            }
-                                        });
+                                        if (queryDocumentSnapshots.size() > 0) {
+                                            DocumentSnapshot documentSnapshot = queryDocumentSnapshots.getDocuments().get(0);
+                                            userPhone = documentSnapshot.getString("phone");
+                                            book_id = documentSnapshot.getId();
+                                            startTime = documentSnapshot.getString("startTime");
+                                            userdb.collection("profile").document(userPhone).get()
+                                                    .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                                                        @Override
+                                                        public void onSuccess(DocumentSnapshot documentSnapshot) {
+                                                            userName = documentSnapshot.getString("name");
+                                                            nameTextView.setText(userName);
+                                                            phoneTextView.setText(userPhone);
+                                                            bookId.setText(book_id);
+                                                            inTime.setText(startTime);
+                                                        }
+                                                    })
+
+                                                    .addOnFailureListener(new OnFailureListener() {
+                                                        @Override
+                                                        public void onFailure(@NonNull Exception e) {
+                                                            Toast.makeText(activity, "Failed to fetch profile data", Toast.LENGTH_SHORT).show();
+                                                        }
+                                                    });
+                                        }
                                     }
                                 })
                                 .addOnFailureListener(new OnFailureListener() {
                                     @Override
                                     public void onFailure(@NonNull Exception e) {
-                                        Toast.makeText(getActivity(), "Failed to get user data", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(activity, "Failed to get user data", Toast.LENGTH_SHORT).show();
                                     }
                                 });
                     }
@@ -226,7 +232,7 @@ public class HomeFragment extends Fragment {
         .addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(getActivity(), "Failed to get owner data", Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity, "Failed to get owner data", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -275,7 +281,7 @@ public class HomeFragment extends Fragment {
                     .addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(getActivity(), "Failed to get seconds online", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(activity, "Failed to get seconds online", Toast.LENGTH_SHORT).show();
                         }
                     });
         }else {
@@ -301,12 +307,16 @@ public class HomeFragment extends Fragment {
                     .addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(getActivity(), "Failed to get seconds online", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(activity, "Failed to get seconds online", Toast.LENGTH_SHORT).show();
 
                         }
                     });
         }
     }
 
-
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        this.activity=(Activity)context;
+    }
 }

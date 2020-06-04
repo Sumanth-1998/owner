@@ -2496,6 +2496,10 @@
         "source": "C:\\Users\\suman\\.gradle\\caches\\transforms-2\\files-2.1\\244c7fd03e4f4f44c877ca21d8b4564d\\jetified-android.joda-2.10.6\\res\\raw\\joda_asia_kamchatka"
     },
     {
+        "merged": "C:\\Users\\suman\\Downloads\\improwner\\parkingowner\\app\\build\\intermediates\\res\\merged\\debug\\layout_notifications_card.xml.flat",
+        "source": "C:\\Users\\suman\\Downloads\\improwner\\parkingowner\\app\\src\\main\\res\\layout\\notifications_card.xml"
+    },
+    {
         "merged": "C:\\Users\\suman\\Downloads\\improwner\\parkingowner\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",
         "source": "C:\\Users\\suman\\.gradle\\caches\\transforms-2\\files-2.1\\53af1f37d65227eb5bcf361cc28c52ea\\appcompat-1.1.0\\res\\drawable-mdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
     },

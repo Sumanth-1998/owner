@@ -1,6 +1,7 @@
 package com.example.owner.ui.notifications;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -56,7 +57,9 @@ public class NotificationsFragment extends Fragment {
                     @Override
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
                         String name=documentSnapshot.getString("Name");
-                        Query query=db.collection("notifications").whereEqualTo("markername",name).orderBy("startdate");
+
+                        Log.d("Name",name);
+                        Query query=db.collection("notification").whereEqualTo("marker",name).orderBy("startDate", Query.Direction.DESCENDING);
                         FirestoreRecyclerOptions options=new FirestoreRecyclerOptions.Builder<notifications_pojo>()
                                 .setQuery(query,notifications_pojo.class)
                                 .build();
@@ -68,6 +71,13 @@ public class NotificationsFragment extends Fragment {
                                 holder.intime.setText(model.getStartTime());
                                 holder.outtime.setText(model.getEndTime());
                                 holder.msg.setText(model.getMsg());
+                                holder.name.setText(model.getCust_name());
+                                holder.support.setOnClickListener( new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        Navigation.findNavController(getActivity(),R.id.nav_host_fragment).navigate(R.id.support);
+                                    }
+                                } );
                             }
 
                             @NonNull
@@ -79,7 +89,7 @@ public class NotificationsFragment extends Fragment {
                             }
                         };
                         adapter.startListening();
-
+                        noti.setAdapter(adapter);
 
                     }
                 })
@@ -92,13 +102,7 @@ public class NotificationsFragment extends Fragment {
 
 
 
-       Button btn = pview.findViewById( R.id.button3);
-        btn.setOnClickListener( new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Navigation.findNavController(getActivity(),R.id.nav_host_fragment).navigate(R.id.support);
-            }
-        } );
+
         return pview;
 
 
