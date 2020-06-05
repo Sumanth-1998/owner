@@ -192,10 +192,14 @@ public class HomeFragment extends Fragment {
                         name=documentSnapshot.getString("Name");
                         userdb.collectionGroup("let out").whereEqualTo("type","PRIVATE PARKING")
                                 .whereEqualTo("status","Active")
-                                .whereEqualTo("marker",name).get()
-                                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-                                    @Override
-                                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                                .whereEqualTo("marker",name).addSnapshotListener(new EventListener<QuerySnapshot>() {
+                            @Override
+                            public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
+
+                                        if(e!=null){
+                                            Toast.makeText(activity, "Error", Toast.LENGTH_SHORT).show();
+                                            return;
+                                        }
                                         if (queryDocumentSnapshots.size() > 0) {
                                             DocumentSnapshot documentSnapshot = queryDocumentSnapshots.getDocuments().get(0);
                                             userPhone = documentSnapshot.getString("phone");
@@ -221,13 +225,8 @@ public class HomeFragment extends Fragment {
                                                     });
                                         }
                                     }
-                                })
-                                .addOnFailureListener(new OnFailureListener() {
-                                    @Override
-                                    public void onFailure(@NonNull Exception e) {
-                                        Toast.makeText(activity, "Failed to get user data", Toast.LENGTH_SHORT).show();
-                                    }
                                 });
+
                     }
                 })
         .addOnFailureListener(new OnFailureListener() {

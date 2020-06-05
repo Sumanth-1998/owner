@@ -1,5 +1,6 @@
 package com.example.owner;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,7 +24,8 @@ public class Logout extends DialogFragment {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(getActivity(), loginfragment.class);
+                startActivity(intent);
             }
         });
         // Button btnStart;
