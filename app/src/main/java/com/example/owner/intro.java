@@ -9,6 +9,8 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.FirebaseOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.MultiplePermissionsReport;
@@ -28,6 +30,12 @@ public class intro extends AppCompatActivity {
         setContentView( R.layout.activity_intro );
         checkPermission();
         Button button = (Button) findViewById( R.id.button7 );
+        FirebaseOptions options1=new FirebaseOptions.Builder()
+                .setApiKey("AIzaSyABcRbxWMARaSNyfY2fOz-PWykCQh1j2LA")
+                .setApplicationId("com.example.owner")
+                .setProjectId("admin-a70aa")
+                .build();
+        FirebaseApp.initializeApp(this,options1,"adminapp");
         button.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {

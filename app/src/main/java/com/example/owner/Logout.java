@@ -12,14 +12,20 @@ import androidx.fragment.app.DialogFragment;
 
 public class Logout extends DialogFragment {
     private static final String TAG = "MyCustomDialog";
-    private Button btn;
+    private Button btn,btn1;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
 
         View view = inflater.inflate( R.layout.fragment_logout, container, false );
+        btn1=view.findViewById(R.id.button5);
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+            }
+        });
         // Button btnStart;
         //Dialog myDialog;    @Override
         //  protected void onCreate(Bundle savedInstanceState) {

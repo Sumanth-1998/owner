@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity implements DrawerLocker {
                 .build();
         FirebaseApp.initializeApp(this,options,"usersapp");
 
+
+
         AppRate.with(this)
             .setInstallDays(0)
                 .setLaunchTimes( 3 )
