@@ -1,5 +1,6 @@
 package com.example.owner;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -89,9 +90,8 @@ public class otp extends Fragment {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()) {
-                            FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                            fragmentTransaction.replace( R.id.log, new pulse() );
-                            fragmentTransaction.commit();
+                            Intent intent = new Intent(getActivity(), MainActivity.class);
+                            startActivity(intent);
 
                         }
                         else{       edt.setError( "Please enter valid otp" );

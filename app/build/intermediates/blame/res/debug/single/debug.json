@@ -2680,6 +2680,10 @@
         "source": "C:\\Users\\suman\\.gradle\\caches\\transforms-2\\files-2.1\\a7dfbb78c47d6fb61939251aeae30df0\\play-services-base-17.1.0\\res\\color\\common_google_signin_btn_text_dark.xml"
     },
     {
+        "merged": "C:\\Users\\suman\\Downloads\\improwner\\parkingowner\\app\\build\\intermediates\\res\\merged\\debug\\layout_credit_book_card.xml.flat",
+        "source": "C:\\Users\\suman\\Downloads\\improwner\\parkingowner\\app\\src\\main\\res\\layout\\credit_book_card.xml"
+    },
+    {
         "merged": "C:\\Users\\suman\\Downloads\\improwner\\parkingowner\\app\\build\\intermediates\\res\\merged\\debug\\anim_button_animation.xml.flat",
         "source": "C:\\Users\\suman\\Downloads\\improwner\\parkingowner\\app\\src\\main\\res\\anim\\button_animation.xml"
     },

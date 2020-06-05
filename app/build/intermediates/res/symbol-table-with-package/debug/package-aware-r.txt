@@ -1718,6 +1718,7 @@ id always
 id async
 id auto
 id automatic
+id balanceTV
 id bankaccd
 id bankaccd1
 id barrier
@@ -1794,6 +1795,7 @@ id container
 id content
 id contentPanel
 id coordinator
+id creditsRecyclerView
 id cropImageView
 id crop_image_menu_crop
 id crop_image_menu_flip
@@ -1804,7 +1806,6 @@ id crop_image_menu_rotate_right
 id custom
 id customPanel
 id cut
-id d
 id dark
 id date_picker_actions
 id decor_content_parent
@@ -2145,7 +2146,6 @@ id textView17
 id textView18
 id textView19
 id textView199
-id textView2
 id textView20
 id textView21
 id textView22
@@ -2344,6 +2344,7 @@ layout activity_login
 layout activity_main
 layout activity_progress
 layout blank_fragment
+layout credit_book_card
 layout crop_image_activity
 layout crop_image_view
 layout custom_dialog

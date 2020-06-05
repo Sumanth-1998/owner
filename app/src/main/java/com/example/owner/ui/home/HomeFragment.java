@@ -51,7 +51,7 @@ public class HomeFragment extends Fragment {
     String name,userPhone,userName,book_id,startTime;
     TextView nameTextView,phoneTextView,bookId,inTime,days,time,bookings,earnings;
     Switch statusSwitch;
-    String phone="";
+    String phone="sss";
     Owner_pojo owner_obj;
     Activity activity;
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -75,6 +75,7 @@ public class HomeFragment extends Fragment {
         earnings=view.findViewById(R.id.textView37);
         db=FirebaseFirestore.getInstance();
         //ListenerRegistration registration=db.collection("owners").document(phone).add
+        Log.d("Phone",phone);
         db.collection("owners").document(phone)
                 .addSnapshotListener(new EventListener<DocumentSnapshot>() {
                     @Override

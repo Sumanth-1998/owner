@@ -1,6 +1,5 @@
 package com.example.owner;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,15 +38,20 @@ FirebaseFirestore admindb;
                 @Override
                 public void onClick(View v) {
                     String number = edt.getText().toString().trim();
-                    String phoneNumber = "+91" + number;
+                    final String phoneNumber = "+91" + number;
                     admindb.collection("approved").document(phoneNumber).get()
                             .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                                 @Override
                                 public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                                     DocumentSnapshot doc=task.getResult();
                                     if(doc.exists()){
-                                        Intent intent = new Intent(getActivity(), MainActivity.class);
-                                        startActivity(intent);
+                                        Bundle bundle = new Bundle(  );
+                                        bundle.putString( "number",phoneNumber );
+                                        otp myFrag = new otp();
+                                        myFrag.setArguments(bundle);
+
+                                        // FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                                        getFragmentManager().beginTransaction().replace(R.id.log,myFrag).commit();
                                     }else{
                                         Toast.makeText(getActivity(), "Your account is not verified by the admin! Please wait for admin approval.", Toast.LENGTH_SHORT).show();
                                     }
