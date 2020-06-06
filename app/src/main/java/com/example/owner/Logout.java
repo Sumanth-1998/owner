@@ -9,6 +9,9 @@ import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.FragmentTransaction;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 
 public class Logout extends DialogFragment {
@@ -24,8 +27,10 @@ public class Logout extends DialogFragment {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), loginfragment.class);
-                startActivity(intent);
+                FirebaseAuth.getInstance().signOut();
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace( R.id.log, new loginfragment() );
+                fragmentTransaction.commit();
             }
         });
         // Button btnStart;

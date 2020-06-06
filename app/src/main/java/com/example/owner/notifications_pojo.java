@@ -3,8 +3,8 @@ package com.example.owner;
 import java.util.Date;
 
 public class notifications_pojo {
-    String marker,order_id,endTime,startTime,msg,cust_name;
-    Date startDate;
+    String marker,order_id,startTime,msg,cust_name;
+    Date startDate,endTime;
     public notifications_pojo() {
     }
 
@@ -16,7 +16,7 @@ public class notifications_pojo {
         this.cust_name = cust_name;
     }
 
-    public notifications_pojo(String marker, String order_id, String endTime, Date startDate, String startTime) {
+    public notifications_pojo(String marker, String order_id, Date endTime, Date startDate, String startTime) {
         this.marker = marker;
         this.order_id = order_id;
         this.endTime = endTime;
@@ -48,12 +48,12 @@ public class notifications_pojo {
         this.order_id = order_id;
     }
 
-    public String getEndTime() {
-        return endTime;
+    public void setEndTime(Date endTime) {
+        this.endTime = endTime;
     }
 
-    public void setEndTime(String endTime) {
-        this.endTime = endTime;
+    public Date getEndTime() {
+        return endTime;
     }
 
     public Date getStartDate() {

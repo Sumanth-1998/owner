@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import com.example.owner.Logout;
@@ -58,12 +59,25 @@ public class HomeFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
 
 
+
         user= FirebaseAuth.getInstance().getCurrentUser();
         if(user!=null){
             phone=user.getPhoneNumber();
 
         }
         View view = inflater.inflate( R.layout.fragment_home, container, false );
+        CardView cardView1 = view.findViewById(R.id.card1);
+        cardView1.setBackgroundResource(R.drawable.customcard1);
+        CardView cardView2 = view.findViewById(R.id.card2);
+        cardView2.setBackgroundResource(R.drawable.customcard1);
+        CardView cardView3 = view.findViewById(R.id.card3);
+        cardView3.setBackgroundResource(R.drawable.customcard1);
+        CardView cardView4 = view.findViewById(R.id.card4);
+        cardView4.setBackgroundResource(R.drawable.customcard1);
+        CardView cardView5 = view.findViewById(R.id.card5);
+        cardView5.setBackgroundResource(R.drawable.customcard1);
+        CardView cardView6 = view.findViewById(R.id.card6);
+        cardView6.setBackgroundResource(R.drawable.customcard1);
         nameTextView=view.findViewById(R.id.textView44);
         phoneTextView=view.findViewById(R.id.textView46);
         bookId=view.findViewById(R.id.textView45);
@@ -88,10 +102,10 @@ public class HomeFragment extends Fragment {
                 .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                     @Override
                     public void onSuccess(DocumentSnapshot documentSnapshot) {*/
-                   if(e!=null){
-                       Toast.makeText(getContext(), "Error while listening", Toast.LENGTH_SHORT).show();
-                       return;
-                   }
+                        if(e!=null){
+                            Toast.makeText(getContext(), "Error while listening", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
                         owner_obj=documentSnapshot.toObject(Owner_pojo.class);
                         statusSwitch.setChecked(owner_obj.isStatus());
                         bookings.setText(""+owner_obj.getBookings());
@@ -117,7 +131,7 @@ public class HomeFragment extends Fragment {
                                                     statusSwitch.setChecked(!isChecked);
                                                 }
                                             });
-                                    }
+                                }
                                 else{
                                     db.collection("owners").document(phone).update("status",isChecked)
                                             .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -192,14 +206,10 @@ public class HomeFragment extends Fragment {
                         name=documentSnapshot.getString("Name");
                         userdb.collectionGroup("let out").whereEqualTo("type","PRIVATE PARKING")
                                 .whereEqualTo("status","Active")
-                                .whereEqualTo("marker",name).addSnapshotListener(new EventListener<QuerySnapshot>() {
-                            @Override
-                            public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
-
-                                        if(e!=null){
-                                            Toast.makeText(activity, "Error", Toast.LENGTH_SHORT).show();
-                                            return;
-                                        }
+                                .whereEqualTo("marker",name).get()
+                                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                                    @Override
+                                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
                                         if (queryDocumentSnapshots.size() > 0) {
                                             DocumentSnapshot documentSnapshot = queryDocumentSnapshots.getDocuments().get(0);
                                             userPhone = documentSnapshot.getString("phone");
@@ -225,16 +235,21 @@ public class HomeFragment extends Fragment {
                                                     });
                                         }
                                     }
+                                })
+                                .addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Toast.makeText(activity, "Failed to get user data", Toast.LENGTH_SHORT).show();
+                                    }
                                 });
-
                     }
                 })
-        .addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(activity, "Failed to get owner data", Toast.LENGTH_SHORT).show();
-            }
-        });
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(activity, "Failed to get owner data", Toast.LENGTH_SHORT).show();
+                    }
+                });
 
 
         btn = view.findViewById( R.id.imageButton2 );
@@ -246,7 +261,7 @@ public class HomeFragment extends Fragment {
 
             }
         } );
-       return view;
+        return view;
 
     }
     public void setStats(){

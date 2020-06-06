@@ -3692,6 +3692,10 @@
         "source": "C:\\Users\\suman\\.gradle\\caches\\transforms-2\\files-2.1\\244c7fd03e4f4f44c877ca21d8b4564d\\jetified-android.joda-2.10.6\\res\\raw\\joda_asia_kabul"
     },
     {
+        "merged": "C:\\Users\\suman\\Downloads\\improwner\\parkingowner\\app\\build\\intermediates\\res\\merged\\debug\\drawable_customcard1.xml.flat",
+        "source": "C:\\Users\\suman\\Downloads\\improwner\\parkingowner\\app\\src\\main\\res\\drawable\\customcard1.xml"
+    },
+    {
         "merged": "C:\\Users\\suman\\Downloads\\improwner\\parkingowner\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_home.xml.flat",
         "source": "C:\\Users\\suman\\Downloads\\improwner\\parkingowner\\app\\src\\main\\res\\layout\\fragment_home.xml"
     },
@@ -4030,6 +4034,10 @@
     {
         "merged": "C:\\Users\\suman\\Downloads\\improwner\\parkingowner\\app\\build\\intermediates\\res\\merged\\debug\\interpolator_btn_checkbox_checked_mtrl_animation_interpolator_1.xml.flat",
         "source": "C:\\Users\\suman\\.gradle\\caches\\transforms-2\\files-2.1\\53af1f37d65227eb5bcf361cc28c52ea\\appcompat-1.1.0\\res\\interpolator\\btn_checkbox_checked_mtrl_animation_interpolator_1.xml"
+    },
+    {
+        "merged": "C:\\Users\\suman\\Downloads\\improwner\\parkingowner\\app\\build\\intermediates\\res\\merged\\debug\\drawable_person.png.flat",
+        "source": "C:\\Users\\suman\\Downloads\\improwner\\parkingowner\\app\\src\\main\\res\\drawable\\person.png"
     },
     {
         "merged": "C:\\Users\\suman\\Downloads\\improwner\\parkingowner\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",

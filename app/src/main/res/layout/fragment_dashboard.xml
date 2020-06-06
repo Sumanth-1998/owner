@@ -288,7 +288,7 @@
             android:layout_height="60dp"
             android:layout_marginLeft="60dp"
             android:layout_marginTop="30dp"
-            android:background="@drawable/p"
+            android:background="@drawable/person"
             tools:srcCompat="@tools:sample/avatars" />
 
 
@@ -298,7 +298,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="60dp"
             android:layout_marginTop="108dp"
-            android:text="Status"
+            android:text="Profile"
             android:textColor="#000000"
             android:textSize="20dp"
             android:textStyle="bold" />

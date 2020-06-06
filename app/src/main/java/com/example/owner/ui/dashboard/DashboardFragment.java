@@ -31,6 +31,7 @@ public class DashboardFragment extends Fragment {
         View view = inflater.inflate( R.layout.fragment_dashboard, container, false );
 
         CardView cardView1 = (CardView) view.findViewById(R.id.card_service);
+        cardView1.setBackgroundResource(R.drawable.customcard1);
         cardView1.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,7 +40,7 @@ public class DashboardFragment extends Fragment {
             }
         } );
         CardView cardView2 = (CardView) view.findViewById(R.id.card_payment);
-
+        cardView2.setBackgroundResource(R.drawable.customcard1);
 
         cardView2.setOnClickListener( new View.OnClickListener() {
             @Override
@@ -49,6 +50,7 @@ public class DashboardFragment extends Fragment {
             }
         } );
         CardView cardView3 = (CardView) view.findViewById(R.id.card_qr);
+        cardView3.setBackgroundResource(R.drawable.customcard1);
         cardView3.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,6 +59,7 @@ public class DashboardFragment extends Fragment {
             }
         } );
         CardView cardView4 = (CardView) view.findViewById(R.id.card_status);
+        cardView4.setBackgroundResource(R.drawable.customcard1);
         cardView4.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,6 +68,7 @@ public class DashboardFragment extends Fragment {
             }
         } );
         CardView cardView5 = (CardView) view.findViewById(R.id.card_support);
+        cardView5.setBackgroundResource(R.drawable.customcard1);
         cardView5.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,6 +76,7 @@ public class DashboardFragment extends Fragment {
             }
         } );
         CardView cardView6 = (CardView) view.findViewById(R.id.card_about);
+        cardView6.setBackgroundResource(R.drawable.customcard1);
         cardView6.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {

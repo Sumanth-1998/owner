@@ -74,11 +74,11 @@
                     android:id="@+id/tvf"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="45dp"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginLeft="23dp"
+                    android:layout_marginTop="9dp"
                     android:text="Ongoing Booking"
                     android:textColor="#ffffff"
-                    android:textSize="20dp"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
             </androidx.cardview.widget.CardView>
@@ -86,7 +86,8 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="360dp"
-                android:layout_height="wrap_content"
+                android:layout_height="160dp"
+                android:id="@+id/card1"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="178dp"
                 card_view:cardBackgroundColor="#ffffff"
@@ -99,7 +100,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
-                    android:layout_marginLeft="110dp"
+                    android:layout_marginLeft="122dp"
                     android:layout_marginTop="61dp"
 
                     android:hint="7349064541"
@@ -112,7 +113,7 @@
                     android:id="@+id/textView45"
                     android:layout_width="210dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="110dp"
+                    android:layout_marginLeft="122dp"
                     android:layout_marginTop="92dp"
 
                     android:hint="sazalmalhotra04@gmail.com"
@@ -123,8 +124,8 @@
                     android:id="@+id/inTimeTextView"
                     android:layout_width="210dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="110dp"
-                    android:layout_marginTop="118dp"
+                    android:layout_marginLeft="122dp"
+                    android:layout_marginTop="123dp"
 
                     android:hint="sazalmalhotra04@gmail.com"
                     android:textColor="#000000"
@@ -160,9 +161,9 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_marginLeft="18dp"
-                    android:layout_marginTop="118dp"
+                    android:layout_marginTop="121dp"
                     android:background="@drawable/timer"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginBottom="9dp"
                     android:textColor="#000000"
                     android:textSize="20dp"
                     android:textStyle="bold" />
@@ -182,7 +183,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="44dp"
                     android:layout_marginTop="24dp"
-                    android:text="Name  : "
+                    android:text="Name    "
                     android:textColor="#000000"
                     android:textSize="18dp"
                     android:textStyle="bold" />
@@ -193,7 +194,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="44dp"
                     android:layout_marginTop="56dp"
-                    android:text="Phone   :"
+                    android:text="Phone    "
 
                     android:textColor="#000000"
                     android:textSize="18dp"
@@ -203,7 +204,7 @@
                     android:id="@+id/textView44"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="110dp"
+                    android:layout_marginLeft="122dp"
                     android:layout_marginTop="28dp"
 
                     android:hint="Sazal Malhotra"
@@ -218,7 +219,7 @@
 
                     android:layout_marginLeft="44dp"
                     android:layout_marginTop="87dp"
-                    android:text="Mail       : "
+                    android:text="Mail"
                     android:textColor="#000000"
                     android:textSize="18dp"
                     android:textStyle="bold" />
@@ -230,7 +231,7 @@
 
                     android:layout_marginLeft="44dp"
                     android:layout_marginTop="118dp"
-                    android:text="In Time : "
+                    android:text="In Time "
                     android:textColor="#000000"
                     android:textSize="18dp"
                     android:textStyle="bold" />
@@ -255,7 +256,7 @@
                 android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:layout_marginLeft="115dp"
-                android:layout_marginTop="370dp"
+                android:layout_marginTop="358dp"
                 card_view:cardBackgroundColor="#7986CB">
 
 
@@ -275,6 +276,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="170dp"
                 android:layout_height="72dp"
+                android:id="@+id/card3"
                 android:layout_marginLeft="25dp"
                 android:layout_marginTop="420dp"
                 card_view:cardBackgroundColor="#ffffff"
@@ -294,7 +296,7 @@
                     android:id="@+id/textView30"
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
+                    android:layout_marginLeft="38dp"
                     android:layout_marginTop="42dp"
                     android:text=" Active days :"
                     android:textColor="#000000"
@@ -305,7 +307,7 @@
                     android:id="@+id/textView31"
                     android:layout_width="38dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="105dp"
+                    android:layout_marginLeft="115dp"
                     android:layout_marginTop="42dp"
                     android:hint="days"
                     android:textColor="#000000"
@@ -316,6 +318,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="170dp"
                 android:layout_height="72dp"
+                android:id="@+id/card5"
                 android:layout_marginLeft="25dp"
                 android:layout_marginTop="500dp"
                 card_view:cardBackgroundColor="#ffffff"
@@ -334,7 +337,7 @@
                     android:id="@+id/textView34"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
+                    android:layout_marginLeft="45dp"
                     android:layout_marginTop="42dp"
                     android:text=" Bookings :"
                     android:textColor="#000000"
@@ -345,7 +348,7 @@
                     android:id="@+id/textView35"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="100dp"
+                    android:layout_marginLeft="113dp"
                     android:layout_marginTop="42dp"
                     android:hint=" 10"
                     android:textColor="#000000"
@@ -356,6 +359,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="170dp"
                 android:layout_height="72dp"
+                android:id="@+id/card4"
                 android:layout_marginLeft="209dp"
                 android:layout_marginTop="420dp"
                 card_view:cardBackgroundColor="#ffffff"
@@ -385,7 +389,7 @@
                     android:id="@+id/textView33"
                     android:layout_width="64dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="79dp"
+                    android:layout_marginLeft="84dp"
                     android:layout_marginTop="42dp"
                     android:hint="30:00 hrs"
                     android:textColor="#000000"
@@ -396,6 +400,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="170dp"
                 android:layout_height="72dp"
+                android:id="@+id/card6"
                 android:layout_marginLeft="209dp"
                 android:layout_marginTop="500dp"
                 card_view:cardBackgroundColor="#ffffff"
@@ -412,9 +417,9 @@
 
                 <TextView
                     android:id="@+id/textView36"
-                    android:layout_width="wrap_content"
+                    android:layout_width="68dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="33dp"
+                    android:layout_marginLeft="42dp"
                     android:layout_marginTop="42dp"
                     android:text=" Earnings :"
                     android:textColor="#000000"
@@ -425,7 +430,7 @@
                     android:id="@+id/textView37"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="95dp"
+                    android:layout_marginLeft="108dp"
 
                     android:layout_marginTop="42dp"
                     android:hint="10,000"
@@ -460,6 +465,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="353dp"
                 android:layout_height="70dp"
+                android:id="@+id/card2"
                 android:layout_marginLeft="25dp"
                 android:layout_marginTop="642dp"
                 android:layout_marginBottom="30dp"
@@ -532,7 +538,7 @@
                 android:layout_marginLeft="345dp"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/off2"
-               />
+                />
 
 
         </RelativeLayout>

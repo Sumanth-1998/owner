@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class notifications_holder extends RecyclerView.ViewHolder {
 
-    public TextView date,name,intime,outtime,msg;
+    public TextView date,name,intime,outtime,msg,otTv;
     public Button support;
     public notifications_holder(@NonNull final View itemView) {
         super(itemView);
@@ -20,6 +20,7 @@ public class notifications_holder extends RecyclerView.ViewHolder {
         this.outtime=itemView.findViewById(R.id.textView55);
         this.msg=itemView.findViewById(R.id.textView47);
         this.support=itemView.findViewById(R.id.button3);
+        this.otTv=itemView.findViewById(R.id.textView54);
 
     }
 }

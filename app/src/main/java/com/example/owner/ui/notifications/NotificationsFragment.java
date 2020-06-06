@@ -68,8 +68,16 @@ public class NotificationsFragment extends Fragment {
                             protected void onBindViewHolder(@NonNull notifications_holder holder, int position, @NonNull notifications_pojo model) {
                                 SimpleDateFormat sdf=new SimpleDateFormat("dd/MM/yyyy");
                                 holder.date.setText(sdf.format(model.getStartDate()));
-                                holder.intime.setText(model.getStartTime());
-                                holder.outtime.setText(model.getEndTime());
+                                holder.intime.setText(sdf.format(model.getStartDate())+" "+model.getStartTime());
+                                SimpleDateFormat sdf1=new SimpleDateFormat("dd/MM/yyyy hh:mm aa");
+                                if(model.getMsg().equals("New Booking!")){
+                                    holder.outtime.setVisibility(View.INVISIBLE);
+                                    holder.otTv.setVisibility(View.INVISIBLE);
+                                }else {
+                                    holder.outtime.setVisibility(View.VISIBLE);
+                                    holder.otTv.setVisibility(View.VISIBLE);
+                                    holder.outtime.setText(sdf1.format(model.getEndTime()));
+                                }
                                 holder.msg.setText(model.getMsg());
                                 holder.name.setText(model.getCust_name());
                                 holder.support.setOnClickListener( new View.OnClickListener() {

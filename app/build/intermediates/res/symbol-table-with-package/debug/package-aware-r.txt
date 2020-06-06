@@ -1549,6 +1549,7 @@ drawable crop_image_menu_rotate_right
 drawable custom_button
 drawable custom_button1
 drawable custom_button2
+drawable customcard1
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
@@ -1615,6 +1616,7 @@ drawable notify_panel_notification_icon_bg
 drawable off2
 drawable p
 drawable p1
+drawable person
 drawable phone
 drawable pin
 drawable pin2
@@ -1764,6 +1766,12 @@ id buttonPanel
 id calendarButton
 id cancel_action
 id cancel_button
+id card1
+id card2
+id card3
+id card4
+id card5
+id card6
 id card_about
 id card_payment
 id card_qr
@@ -1910,6 +1918,7 @@ id italic
 id item_touch_helper_previous_elevation
 id labeled
 id largeLabel
+id latitudeEditText
 id left
 id light
 id line1
@@ -1918,6 +1927,7 @@ id listMode
 id list_item
 id log
 id log1
+id longitudeEditText
 id lottie_layer_name
 id maleButton
 id masked
@@ -2063,6 +2073,7 @@ id src_over
 id standard
 id start
 id status
+id statusEditText
 id status_bar_latest_event_content
 id stretch
 id submenuarrow
