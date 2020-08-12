@@ -116,7 +116,7 @@
                     android:layout_marginLeft="122dp"
                     android:layout_marginTop="92dp"
 
-                    android:hint="sazalmalhotra04@gmail.com"
+                    android:hint="XXXXXX"
                     android:textColor="#000000"
                     android:textSize="12dp"
                     android:textStyle="bold" />
@@ -219,9 +219,9 @@
 
                     android:layout_marginLeft="44dp"
                     android:layout_marginTop="87dp"
-                    android:text="Mail"
+                    android:text="Booking ID"
                     android:textColor="#000000"
-                    android:textSize="18dp"
+                    android:textSize="15dp"
                     android:textStyle="bold" />
 
                 <TextView

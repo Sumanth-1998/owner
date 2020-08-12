@@ -96,6 +96,7 @@ public class AccountFragment  extends Fragment {
                                 Duration duration=new Duration(startDateTime,enddateTime);
                                 long hrs=duration.getStandardHours();
                                 long mins=duration.getStandardMinutes();
+                                mins=mins-(hrs*60);
                                 holder.duration.setText(""+hrs+" : "+mins+" hrs");
                             }
 

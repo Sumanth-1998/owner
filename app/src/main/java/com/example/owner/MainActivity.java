@@ -16,6 +16,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
 
+import java.util.List;
+
 import hotchemi.android.rate.AppRate;
 interface  DrawerLocker{
     public void setDrawerLocked(boolean shouldLock);
@@ -34,7 +36,17 @@ public class MainActivity extends AppCompatActivity implements DrawerLocker {
                 .setApplicationId("com.example.owner")
                 .setProjectId("parkin-n-charge")
                 .build();
-        FirebaseApp.initializeApp(this,options,"usersapp");
+        List<FirebaseApp> firebaseApps = FirebaseApp.getApps(MainActivity.this);
+        boolean flag=false;
+        for(FirebaseApp app : firebaseApps){
+            if("usersapp".equals(app.getName())){
+                flag=true;
+            }
+        }
+        if(!flag){
+            FirebaseApp.initializeApp(this,options,"usersapp");
+        }
+
 
 
 

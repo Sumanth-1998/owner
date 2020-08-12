@@ -28,9 +28,10 @@ public class Logout extends DialogFragment {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
-                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace( R.id.log, new loginfragment() );
-                fragmentTransaction.commit();
+                Intent intent=new Intent(getActivity(),intro.class);
+                intent.addCategory(Intent.CATEGORY_LAUNCHER);
+                startActivity(intent);
+                getActivity().finishAffinity();
             }
         });
         // Button btnStart;

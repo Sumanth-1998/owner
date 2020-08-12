@@ -35,7 +35,18 @@ public class intro extends AppCompatActivity {
                 .setApplicationId("com.example.owner")
                 .setProjectId("admin-a70aa")
                 .build();
-        FirebaseApp.initializeApp(this,options1,"adminapp");
+
+        List<FirebaseApp> firebaseApps = FirebaseApp.getApps(getApplicationContext());
+        boolean flag=false;
+        for(FirebaseApp app : firebaseApps){
+            if("adminapp".equals(app.getName())){
+                flag=true;
+            }
+        }
+        if(!flag){
+            FirebaseApp.initializeApp(this,options1,"adminapp");
+        }
+
         button.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {

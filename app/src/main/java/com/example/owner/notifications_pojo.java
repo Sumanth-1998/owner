@@ -57,7 +57,7 @@ public class notifications_pojo {
     }
 
     public Date getStartDate() {
-        return startDate;
+        return this.startDate;
     }
 
     public void setStartDate(Date startDate) {
@@ -65,7 +65,7 @@ public class notifications_pojo {
     }
 
     public String getStartTime() {
-        return startTime;
+        return this.startTime;
     }
 
     public void setStartTime(String startTime) {
