@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,11 +27,13 @@ public class service extends Fragment {
     FirebaseFirestore db;
     FirebaseUser user;
     String phone="";
+    Button back;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
 
         View view = inflater.inflate( R.layout.fragment_service, container, false );
+        back=view.findViewById(R.id.button);
         active_since=view.findViewById(R.id.textView136);
         tot_bookings=view.findViewById(R.id.textView137);
         db=FirebaseFirestore.getInstance();
@@ -52,5 +55,14 @@ public class service extends Fragment {
                         }
                     }
                 });
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().onBackPressed();
+            }
+        });
         return view;
-    }}
+    }
+
+
+}

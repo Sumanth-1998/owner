@@ -4,6 +4,16 @@
             "outputFile": "C:\\Users\\suman\\Downloads\\improwner\\parkingowner\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zh\\values-zh.xml",
             "map": [
                 {
+                    "source": "C:\\Users\\suman\\.gradle\\caches\\transforms-2\\files-2.1\\9ea7c7d804ae04ca83f501793ebfc4fd\\jetified-android-image-cropper-2.7.0\\res\\values-zh\\values-zh.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,135,182,234,286,353,418,480,540",
+                        "endColumns": "79,46,51,51,66,64,61,59,64",
+                        "endOffsets": "130,177,229,281,348,413,475,535,600"
+                    }
+                },
+                {
                     "source": "C:\\Users\\suman\\.gradle\\caches\\transforms-2\\files-2.1\\78d44b5eedfcc3c96b106363fb486134\\android-rate-1.0.1\\res\\values-zh\\values-zh.xml",
                     "from": {
                         "startLines": "4,5,6,7,8",
@@ -18,16 +28,6 @@
                         "startOffsets": "605,658,742,790,838",
                         "endColumns": "52,83,47,47,56",
                         "endOffsets": "653,737,785,833,890"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\suman\\.gradle\\caches\\transforms-2\\files-2.1\\d1cb84fcefcd10921394bc5e5ae5673b\\jetified-android-image-cropper-2.7.0\\res\\values-zh\\values-zh.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10",
-                        "startColumns": "4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,135,182,234,286,353,418,480,540",
-                        "endColumns": "79,46,51,51,66,64,61,59,64",
-                        "endOffsets": "130,177,229,281,348,413,475,535,600"
                     }
                 }
             ]
